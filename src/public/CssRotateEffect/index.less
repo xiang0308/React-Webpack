@@ -1,0 +1,48 @@
+/*
+* @Author: wangxiang
+* @Date:   2017-05-16 11:05:49
+* @Last Modified by:   wangxiang
+* @Last Modified time: 2017-05-17 15:31:07
+*/
+.css-effect {
+    width: 100%;
+    height: 100%;
+
+    // 旋转
+    &-rotate {
+        -webkit-animation-name: rotate-effect;
+        -webkit-animation-timing-function: linear;
+    }
+    @-webkit-keyframes rotate-effect {
+        0% {
+            -webkit-transform: rotate(0);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    // 翻转
+    &-flip {
+        -webkit-animation-name: flip-effect;
+    }
+    @-webkit-keyframes flip-effect {
+        0% {
+            -webkit-transform: scaleX(0);
+            opacity: 1;
+        }
+        35% {
+            -webkit-transform: scaleX(1);
+            opacity: 1;
+        }
+        70% {
+            -webkit-transform: scaleX(0);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: scaleX(1);
+            opacity: 1;
+        }
+    }
+}

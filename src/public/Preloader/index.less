@@ -1,0 +1,69 @@
+/*
+* @Author: wangxiang
+* @Date:   2017-04-21 10:05:51
+* @Last Modified by:   wangxiang
+* @Last Modified time: 2017-08-24 18:38:24
+*/
+.preloader {
+    span {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: pink;
+        position: absolute;
+        -webkit-animation: load 1.04s ease infinite;
+        &:nth-child(1) {
+            left: 0;
+            top: 50%;
+            margin-top: -8px;
+            -webkit-animation-delay: 0.13s;
+        }
+        &:nth-child(2) {
+            left: 14px;
+            top: 14px;
+            -webkit-animation-delay: 0.26s;
+        }
+        &:nth-child(3) {
+            left: 50%;
+            top: 0;
+            margin-left: 8px;
+            -webkit-animation-delay: 0.39s;
+        }
+        &:nth-child(4) {
+            top: 14px;
+            right: 14px;
+            -webkit-animation-delay: 0.52s;
+        }
+        &:nth-child(5) {
+            right: 0;
+            top: 50%;
+            margin-top: 8px;
+            -webkit-animation-delay: 0.65s;
+        }
+        &:nth-child(6) {
+            right: 14px;
+            bottom: 14px;
+            -webkit-animation-delay: 0.78s;
+        }
+        &:nth-child(7) {
+            bottom: 0;
+            left: 50%;
+            margin-left: 8px;
+            -webkit-animation-delay: 0.91s;
+        }
+        &:nth-child(8) {
+            bottom: 14px;
+            left: 14px;
+            -webkit-animation-delay: 1.04s;
+        }
+    }
+    @-webkit-keyframes load {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.2;
+        }
+    }
+}
