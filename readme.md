@@ -1,3 +1,3 @@
 ### 描述
 
-未完待续。。
+react+redux+webpack
