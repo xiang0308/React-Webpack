@@ -1,0 +1,88 @@
+/*
+* @Author: wangxiang
+* @Date:   2017-06-26 18:46:30
+* @Last Modified by:   wangxiang
+* @Last Modified time: 2017-06-27 16:28:49
+*/
+.ui-btn {
+    width: 287px;
+    height: 96px;
+
+    &.order {
+        background: url('images/order.png') no-repeat;
+        background-size: contain;
+    }
+    &.ticket {
+        background: url('images/ticket.png') no-repeat;
+        background-size: contain;
+    }
+    &.submit {
+        width: 225px;
+        height: 63px;
+        background: url('images/submit.png') no-repeat;
+        background-size: contain;
+    }
+    &.validcode {
+        width: 120px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 30px;
+        color: #e5bd70;
+        float: right;
+        margin-top: 14px;
+        margin-right: 18px;
+        font-family: "微软雅黑";
+        z-index: 1;
+    }
+    &.fast {
+        width: 225px;
+        height: 63px;
+        background: url('images/fast-order.png') no-repeat;
+        background-size: contain;
+    }
+    &.back {
+        width: 225px;
+        height: 63px;
+        background: url('images/back.png') no-repeat;
+        background-size: contain;
+    }
+    &.order-submit {
+        width: 225px;
+        height: 63px;
+        background: url('images/order-submit.png') no-repeat;
+        background-size: contain;
+    }
+    &.known {
+        width: 225px;
+        height: 63px;
+        background: url('images/known.png') no-repeat;
+        background-size: contain;
+    }
+    &.search {
+        display: inline-block;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        padding: 0 10px;
+        font-size: 12px;
+        color: #fff;
+        border: 1px solid #4ab3fb;
+        background-color: #4ab3fb;
+        border-radius: 3px;
+
+        &:hover {
+            background-color: #8ad0ff;
+            border-color: #8ad0ff;
+            cursor: pointer;
+        }
+    }
+    &.readonly {
+        pointer-events: none;
+
+        .ui-btn-top {
+            background: rgb(253, 179, 198);
+        }
+    }
+}

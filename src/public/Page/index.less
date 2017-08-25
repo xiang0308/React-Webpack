@@ -1,0 +1,78 @@
+/*
+* @Author: wangxiang
+* @Date:   2017-03-30 12:01:26
+* @Last Modified by:   wangxiang
+* @Last Modified time: 2017-03-30 12:05:32
+*/
+.rightDiv {
+    float: left;
+    float: left;
+    padding-left: 16px;
+    margin-top: 1px;
+}
+.paginationDiv {
+    display: block;
+    margin-top: 50px;
+    color: #535353;
+    line-height: 29px;
+    text-align: center;
+    margin-left: 52px;
+
+    a {
+        float: left;
+        width: 25px;
+        height: 30px;
+        padding: 0 7px;
+        vertical-align: middle;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .next, .prev {
+        background-color: #f3f4f8;
+        border: 1px solid #e5e5e5;
+
+        &:hover {
+            background-color: #ddd;
+            border: 1px solid #ddd;
+        }
+        &:before {
+            content: '<';
+            font-size: 14px
+        }
+    }
+    .disable.next, .prev.disable {
+        background-color: #f3f4f8;
+        border-color: #e5e5e5;
+        cursor: no-drop;
+    }
+    .disable.next:before, .prev.disable:before {
+        color: #a0a0a0;
+        border-color: #337ab7
+    }
+    .next:before {
+        content: '>'
+    }
+    .num {
+        margin-left: -1px;
+        padding: 0 7px;
+        border: 1px solid #e5e5e5;
+        color: #707070;
+
+        &.current {
+            background-color: #337ab7;
+            border-color: #337ab7;
+            color: #fff
+        }
+        &:hover {
+            background-color: #ddd;
+            border-color: #ddd;
+            color: #1a1a1a
+        }
+    }
+    input {
+        width: 44px;
+        height: 24px;
+        border: 1px solid #ddd;
+        text-align: center
+    }
+}
