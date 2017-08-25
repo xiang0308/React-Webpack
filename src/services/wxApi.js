@@ -2,13 +2,12 @@
  * @Author: wangxiang
  * @Date:   2017-04-25 16:02:37
  * @Last Modified by:   wangxiang
- * @Last Modified time: 2017-08-24 18:43:32
+ * @Last Modified time: 2017-08-25 10:47:18
  */
 
 import ApiService from './service';
 import $ from 'jquery';
 import { getRootUrl, getShareUrl } from './utils';
-// import wx from './wx';
 
 var wx = require('weixin-js-sdk');
 let shareUrl = require('../images/share.jpg');

@@ -2,72 +2,20 @@
 * @Author: wangxiang
 * @Date:   2017-04-10 14:44:14
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-04-16 12:42:33
+* @Last Modified time: 2017-08-25 10:45:14
 */
 import $ from 'jquery';
 import {getRootUrl} from './utils';
+
 let ApiService = getApiService();
 export default ApiService;
 
 export function getApiService() {
     return myAjax({
-        appInfo: {
-            name: '分享JS-SDK应用程序签名信息',
-            url: '/api/daning/jssdk'
-        },
-        getActivityStauts: {
-            name: '获取活动状态',
-            url: '/api/daning/greececulture/status',
+        requestList: {
+            name: '',
+            url: '',
             params: {
-                name: 'HellenicFestival'
-            }
-        },
-        getMyPosterInfo: {
-            name: '我的海报页',
-            url: '/api/daning/greececulture/info',
-            params: {
-                openid: ''
-            }
-        },
-        sendMessage: {
-            name: '发送短信',
-            url: '/api/daning/greececulture/sendsms',
-            params: {
-                phone: ''
-            }
-        },
-        submit: {
-            name: '提交',
-            url: '/api/daning/greececulture/submit',
-            params: {
-                openid: '',
-                code: '',
-                phone: '',
-                poster: ''
-            }
-        },
-        getWechatMaterial: {
-            name: '获取微信照片',
-            url: '/api/daning/upload',
-            params: {
-                media_id: ''
-            }
-        },
-        vote: {
-            name: '投票',
-            url: '/api/daning/greececulture/vote',
-            params: {
-                helper_openid: '',
-                player_openid: ''
-            }
-        },
-        getPosterList: {
-            name: '海报墙',
-            url: '/api/daning/greececulture/list',
-            params: {
-                id: '',
-                page: 0,
-                page_size: 4
             }
         }
     });

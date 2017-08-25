@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-04-21 10:05:51
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-24 18:41:27
+* @Last Modified time: 2017-08-25 10:50:48
 */
 import React from 'react';
 import { bindActionCreators } from 'redux';
@@ -32,6 +32,38 @@ class MobileComponent extends React.Component {
 
     componentDidMount() {
         let { actions } = this.props;
+        let ryApi = services.ApiService;
+        window.openid = this.props.location.query.openid;
+
+        // actions.showPreloader();
+        // if (window.openid) {
+        //     ryApi
+        //         .appInfo()
+        //         .then(res => {
+        //             _this.setState({
+        //                 isLoading: false
+        //             });
+        //         let appInfoConfig = res.result.config || {};
+        //         if (appInfoConfig.appId) {
+        //             services
+        //                 .wxConfig(appInfoConfig)
+        //                 .then(() => {
+        //                     actions.hidePreloader();
+        //                     ryApi.maidian({
+        //                         openid: window.openid,
+        //                         type: '1'
+        //                     });
+        //                 });
+        //         } else {
+        //             actions.hidePreloader();
+        //         }
+        //     });
+        // } else {
+        //     _this.setState({
+        //         isLoading: false
+        //     });
+        //     actions.hidePreloader();
+        // }
 
         // actions.showAlert('aaa', 'ssss', function() {
         //     alert(111);
