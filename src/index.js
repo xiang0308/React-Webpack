@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-04-10 17:50:56
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-25 10:32:27
+* @Last Modified time: 2017-08-25 10:38:16
 */
 import 'core-js/fn/object/assign';
 import React from 'react';
@@ -12,6 +12,10 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import reducer from './reducers';
 import { Router, Route, hashHistory } from 'react-router';
+
+import PC from './containers/pc';
+import Admin from './containers/pc/admin';
+
 import Mobile from './containers/m';
 import MobileCss from './containers/m/css';
 import MobileList from './containers/m/list';
@@ -20,7 +24,6 @@ import MobilePreloader from './containers/m/preloader';
 import MobileModal from './containers/m/modal';
 import MobileSwiper from './containers/m/swiper';
 import MobileEffect from './containers/m/effect';
-import Admin from './containers/pc/admin';
 import NoMatch from './containers/NoMatch';
 
 import 'styles/common.less';
