@@ -1,10 +1,18 @@
 /*
 * @Author: wangxiang
-* @Date:   2017-04-21 10:05:51
+* @Date:   2017-07-28 18:14:39
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-24 18:38:24
+* @Last Modified time: 2017-08-28 18:14:50
 */
 .preloader {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px/2;
+    margin-left: -100px/2;
+
     span {
         display: inline-block;
         width: 16px;
@@ -13,6 +21,7 @@
         background: pink;
         position: absolute;
         -webkit-animation: load 1.04s ease infinite;
+
         &:nth-child(1) {
             left: 0;
             top: 50%;
@@ -27,7 +36,7 @@
         &:nth-child(3) {
             left: 50%;
             top: 0;
-            margin-left: 8px;
+            margin-left: -8px;
             -webkit-animation-delay: 0.39s;
         }
         &:nth-child(4) {
@@ -38,7 +47,7 @@
         &:nth-child(5) {
             right: 0;
             top: 50%;
-            margin-top: 8px;
+            margin-top: -8px;
             -webkit-animation-delay: 0.65s;
         }
         &:nth-child(6) {
@@ -49,7 +58,7 @@
         &:nth-child(7) {
             bottom: 0;
             left: 50%;
-            margin-left: 8px;
+            margin-left: -8px;
             -webkit-animation-delay: 0.91s;
         }
         &:nth-child(8) {

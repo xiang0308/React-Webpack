@@ -1,9 +1,10 @@
 /*
 * @Author: wangxiang
-* @Date:   2017-04-21 10:05:51
+* @Date:   2017-07-28 18:14:39
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-24 18:38:54
+* @Last Modified time: 2017-08-28 18:16:21
 */
+
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import CssLayout from '../CssLayout';
@@ -22,10 +23,10 @@ class ModalComponent extends Component {
     }
 
     render() {
-        let { children, show } = this.props;
+        let { children, show, layout } = this.props;
 
         return show && (
-            <CssLayout layout="5" className={
+            <CssLayout layout={layout || 5} className={
                 classnames(['modal'])
             }>
                 {children}
