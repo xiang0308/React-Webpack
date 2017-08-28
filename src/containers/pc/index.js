@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-07-24 17:55:12
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-07-25 16:25:36
+* @Last Modified time: 2017-08-28 17:52:32
 */
 import React from 'react';
 import { bindActionCreators } from 'redux';

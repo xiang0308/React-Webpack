@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-04-21 10:05:51
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-25 10:50:48
+* @Last Modified time: 2017-08-28 17:52:22
 */
 import React from 'react';
 import { bindActionCreators } from 'redux';
@@ -15,6 +15,8 @@ import Modal from 'public/Modal';
 import Alert from 'public/Alert';
 import Confirm from 'public/Confirm';
 import Music from 'public/Music';
+import * as services from 'services';
+
 import './index.less';
 
 let bgSrc = require('images/bg.mp3');
