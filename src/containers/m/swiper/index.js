@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-04-21 10:05:51
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-24 18:41:17
+* @Last Modified time: 2017-08-29 11:00:43
 */
 
 import React from 'react';
@@ -31,7 +31,6 @@ class SwiperComponent extends React.Component {
             initialSlide :0,
             noSwiping : true
         });
-        // console.log(actions);
     }
 
     render() {
@@ -54,10 +53,10 @@ class SwiperComponent extends React.Component {
                 <div className="swiper-wrapper">
                     <div className="swiper-slide">
                         <CssFadeEffect
-                            active="true"
+                            active="false"
                             status="1"
-                            direction="left"
-                            duration="0.8"
+                            direction="right"
+                            duration="0.3"
                             delay="0"
                             mode="both"
                         >

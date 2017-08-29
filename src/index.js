@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-04-10 17:50:56
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-25 10:38:16
+* @Last Modified time: 2017-08-28 18:53:41
 */
 import 'core-js/fn/object/assign';
 import React from 'react';
@@ -15,6 +15,7 @@ import { Router, Route, hashHistory } from 'react-router';
 
 import PC from './containers/pc';
 import Admin from './containers/pc/admin';
+import Search from './containers/pc/search';
 
 import Mobile from './containers/m';
 import MobileCss from './containers/m/css';
@@ -45,6 +46,7 @@ ReactDOM.render((
             </Route>
             <Route path="/pc" component={PC}>
                 <Route path="admin" component={Admin} />
+                <Route path="search" component={Search} />
             </Route>
             <Route path="*" component={NoMatch}/>
         </Router>
