@@ -18,14 +18,14 @@
 
 ### 5. 本地访问地址
 
-`http://localhost:8666/#/m/[router] `
+`http://localhost:8666/#/m/[routername] `
 
-`http://localhost:8666/#/pc/[router]`
+`http://localhost:8666/#/pc/[routername]`
 
 `如: http://localhost:8666/#/m/effect`
 
 ### 6. 线上访问地址
 
-`http://[domain name]/dist/#/m/[router name]`
+`http://[domainname]/dist/#/m/[routername]`
 
 `如: https://xiang0308.github.io/react-webpack/dist/#/m/effect`
