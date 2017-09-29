@@ -1,12 +1,17 @@
 /*
-* @Author: wangxiang
-* @Date:   2017-07-28 18:14:39
+* @Author: Wei Jie
+* @Date:   2017-04-25 10:15:58
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-28 18:16:30
+* @Last Modified time: 2017-09-11 17:34:02
 */
 
+'use strict';
+
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import './index.less';
+
+let bgSrc = require('./images/bg.mp3');
 
 class MusicComponent extends Component {
     constructor(props) {
@@ -15,13 +20,40 @@ class MusicComponent extends Component {
     }
 
     componentDidMount() {
-        let { play } = this.props;
+        let { play, actions } = this.props;
+        let audioElement = this.refs.bgMusic;
+        window.audioElement = audioElement;
 
         if (play) {
             this.play();
         } else {
             this.pause();
         }
+
+        audioElement.addEventListener('canplaythrough', () => {
+            actions.playMusic();
+            this.play();
+        }, false);
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                actions.playMusic();
+                this.play();
+            } else {
+                actions.pauseMusic();
+                this.pause();
+            }
+        }, false);
+
+        document.addEventListener('webkitvisibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                actions.playMusic();
+                this.play();
+            } else {
+                actions.pauseMusic();
+                this.pause();
+            }
+        }, false);
     }
 
     componentWillUnmount() {
@@ -35,23 +67,33 @@ class MusicComponent extends Component {
         this.refs.bgMusic.pause();
     }
 
-    render() {
-        let { src } = this.props;
+    handleClick(e) {
+        e.preventDefault();
+        let {play, actions} = this.props;
 
-        if (this.refs.bgMusic) { // not first
-            this.componentDidMount();
+        if (play) {
+            actions.pauseMusic();
+            this.pause();
+        } else {
+            actions.playMusic();
+            this.play();
         }
+    }
+
+    render() {
+        let { play } = this.props;
 
         return (
             <div className="music">
-                <audio loop ref="bgMusic" src={src} controls/>
+                <div className={
+                    classnames(['cp-music trans', play ? 'cp-music-on rotate' : 'cp-music-off'])
+                } onClick={(e) => this.handleClick(e)}></div>
+                <audio loop ref="bgMusic" src={bgSrc} controls/>
             </div>
         );
     }
 }
 
-MusicComponent.defaultProps = {
-    // layout: PropTypes.string
-};
+MusicComponent.defaultProps = {};
 
 export default MusicComponent;
