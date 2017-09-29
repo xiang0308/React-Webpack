@@ -2,10 +2,9 @@
 * @Author: wangxiang
 * @Date:   2017-03-29 15:36:16
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-25 11:56:15
+* @Last Modified time: 2017-09-29 17:24:41
 */
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
 import PageComponent from 'public/Page';
 import BtnComponent from 'business/Btn';
 import TextInputComponent from 'business/TextInput';
