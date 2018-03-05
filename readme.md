@@ -1,38 +1,10 @@
 # 说明
 
-### 1. 安装环境
+### 1. 项目安装环境
 
 ​	node环境建议安装： https://nodejs.org/en/blog/release/v6.2.0/
 
-### 2. 活动开发基础框架搭建
-
-   （1） 登录GitLab（个人域账号登录）
-
-   （2） 搜索仓库名，然后复制远程仓库地址，打开soucetree，将远程仓库地址克隆到本地
-
-   （3） 找到baseV2文件夹，即h5活动开发基础框架，复制一份，重命名为当前要开发的活动项目名称
-
-   （4）根据需求，在 src/index.js 入口文件中定义页面路由
-
-   （5）根据路由，在 src/containers/m 目录下创建对应的顶层组件，每个顶层组件对应一个页面模块
-
-   （6）根据业务来拆分页面组件由业务组件（在 src/business 目录下创建）或者通用组件（在 src/public 目录下创建或调用已有的通用组件）来完成页面组件开发
-
-   （7）根据业务，按需利用 redux 来处理数据
-
-​	      a. 在  src/constants 目录下按业务划分来定义constant
-
-​	      b. 在  src/actions 目录下按业务划分来定义action
-
-​	      c.  在  src/reducers 目录下按业务划分来定义reducer
-
-   （8）通用方法在  src/services/utils.js 工具类中定义，后台接口在 src/services/ry-api.js 中定义，通用样式在 src/styles/common.less 中定义
-
-   （9）后台api接口域名、h5微信分享授权地址等在  src/config/base.js 中配置
-
-   （10）修改 package.json 中 name 为当前活动名称，修改 readme.md 文件添加相关活动描述等
-
-### 3. 项目结构概览及说明
+### 2. 项目结构概览及说明
 
 ```tree
 .
@@ -103,7 +75,7 @@
 |  |   ├─animate.less                   // 全局动画样式
 |  ├─images                          	// 图片文件夹
 ```
-### 4. 项目运行
+### 3. 项目运行
 
 ##### 安装依赖包
 
@@ -121,7 +93,7 @@
 
 `npm run dist`
 
-### 5. 项目部署
+### 4. 项目部署
 
 （1）登录到服务器，ftp的连接方式如下：
 
@@ -139,7 +111,7 @@
 
 （4）浏览，`如: https://xiang0308.github.io/react-webpack/dist/#/m/effect`
 
-### 6. 其他
+### 5. 其他
 
 | 公共组件            | 描述               |
 | --------------- | ---------------- |
