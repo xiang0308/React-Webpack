@@ -1,8 +1,8 @@
 # 说明
 
-### 1. 项目安装环境
+### 1. 项目安装环境	
 
-​	node环境建议安装： https://nodejs.org/en/blog/release/v6.2.0/
+​	建议安装`node7.0.0`以下版本[https://nodejs.org/en/blog/release/v6.2.0/](https://nodejs.org/en/blog/release/v6.2.0/)
 
 ### 2. 项目结构概览及说明
 
