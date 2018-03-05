@@ -9,7 +9,6 @@
 ```tree
 .
 ├─.babelrc                              // babel的配置
-├─.config.json                          // 如果使用了ip代理，那么配置文件在这里
 ├─.editorconfig                         // 编辑器配置
 ├─.eslintrc.json                        // eslint的配置文件
 ├─.gitignore                            // git忽略上传的文件
@@ -19,12 +18,12 @@
 ├─gulpfile.js				    		// 将本地项目文件通过sftp打包到远程服务器
 ├─webpack.config.js		    			// webpack配置文件
 ├─cfg                         		    // webpack打包环境配置文件
-|      ├─base.js						// webpack基础配置文件
-|      ├─default.js						// webpack默认（less、图片、js等文件编译打包）配置文件
-|      ├─dev.js							// webpack开发环境配置文件
-|      ├─qa.js							// webpack测试环境配置文件
-|      ├─rd.js							// 打包到联调、测试环境配置文件
-|      ├─dist.js						// 打包到线上环境配置文件
+|  ├─base.js							// webpack基础配置文件
+|  ├─default.js							// webpack默认（less、图片、js等文件编译打包）配置文件
+|  ├─dev.js								// webpack开发环境配置文件
+|  ├─qa.js								// webpack测试环境配置文件
+|  ├─rd.js								// 打包到联调、测试环境配置文件
+|  ├─dist.js							// 打包到线上环境配置文件
 ├─src                                 	// 页面主文件
 |  ├─favicon.png						// 收藏夹图标
 |  ├─index.js							// 入口js文件，页面路由配置，公共样式，相关依赖库等注入
