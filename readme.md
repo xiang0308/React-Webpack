@@ -96,24 +96,26 @@
 
 ### 封装的相关组件
 
-| 公共组件            | 描述               |
-| --------------- | ---------------- |
-| Alert           | 提示框组件            |
-| Confirm         | 确认框组件            |
-| CssAlign        | 水平对齐组件           |
-| CssFadeEffect   | 动效组件             |
-| CssFlex         | 弹性布局组件           |
-| CssLayout       | 水平垂直居中组件         |
-| CssRotateEffect | 旋转动画组件           |
-| CssShakeEffect  | 摇动动画组件           |
-| CssZoomEffect   | 放大缩小动画组件         |
-| FormControl     | 表单控制组件           |
-| ListView        | 列表上拉下滑加载组件       |
-| Mask            | 遮罩组件             |
-| Mobile          | 基于手机端顶层ui组件      |
-| Modal           | 弹层组件             |
-| Music           | 音乐播放组件           |
+| 公共组件        | 描述                             |
+| --------------- | -------------------------------- |
+| Alert           | 提示框组件                       |
+| Confirm         | 确认框组件                       |
+| CssAlign        | 水平对齐组件                     |
+| CssFadeEffect   | 动效组件                         |
+| CssFlex         | 弹性布局组件                     |
+| CssLayout       | 水平垂直居中组件                 |
+| CssRotateEffect | 旋转动画组件                     |
+| CssShakeEffect  | 摇动动画组件                     |
+| CssZoomEffect   | 放大缩小动画组件                 |
+| FormControl     | 表单控制组件                     |
+| ListView        | 列表上拉下滑加载组件             |
+| Mask            | 遮罩组件                         |
+| Mobile          | 基于手机端顶层ui组件             |
+| Modal           | 弹层组件                         |
+| Music           | 音乐播放组件                     |
 | Orientation     | 手机竖屏切换横屏增强用户体验组件 |
-| Preloader       | 加载等待组件           |
-| Shake           | 手机摇一摇组件          |
-| TwoWayBind      | 双向绑定操作表单函数库      |
+| Preloader       | 加载等待组件                     |
+| Shake           | 手机摇一摇组件                   |
+| TwoWayBind      | 双向绑定操作表单函数库           |
+| ...             | ...                              |
+
