@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-04-26 10:05:51
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-06-16 17:19:36
+* @Last Modified time: 2018-07-11 13:47:26
 */
 import React from 'react';
 import { bindActionCreators } from 'redux';
@@ -39,8 +39,7 @@ class MobileComponent extends React.Component {
         window.openid = this.props.location.query.openid;
         this.onOrientationChange();
 
-        /**********  获取分享JS-SDK应用程序签名信息 **********/
-        if (window.openid) {
+        if (window.openid) {    // 获取分享JS-SDK应用程序签名信息
             actions.showPreloader();
             ryApi
                 .appInfo()
@@ -50,24 +49,23 @@ class MobileComponent extends React.Component {
                         services
                             .wxConfig(appInfoConfig)
                             .then(() => {
-                                // 背景音乐需要主动触发下，不然不会加载播放
+                                // 背景音乐需要主动触发下，否则不会加载播放
                                 window.audioElement.load();
                                 window.audioElement.play();
-                                // ryApi.maidian({
-                                //     openid: window.openid,
-                                //     type: '1'
-                                // });
+                                // TODO添加埋点
+                                // Coding...
                             })
                             .always(() => {
                                 actions.hidePreloader();
                             });
-                    } else {
-                        actions.hidePreloader();
                     }
+                })
+                .always(() => {
+                    actions.hidePreloader();
                     this.setState({
                         isLoading: false
                     });
-            });
+                });
         } else {
             window.audioElement.load();
             window.audioElement.play();

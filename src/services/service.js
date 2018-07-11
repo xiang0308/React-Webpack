@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-04-10 14:44:14
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-25 10:45:14
+* @Last Modified time: 2018-07-11 13:43:51
 */
 import $ from 'jquery';
 import {getRootUrl} from './utils';
@@ -15,8 +15,7 @@ export function getApiService() {
         requestList: {
             name: '',
             url: '',
-            params: {
-            }
+            params: {}
         }
     });
 }
