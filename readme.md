@@ -1,10 +1,10 @@
 # 说明
 
-### 1. 项目安装环境	
+### 项目安装环境	
 
-​	建议安装`node7.0.0`以下版本[https://nodejs.org/en/blog/release/v6.2.0/](https://nodejs.org/en/blog/release/v6.2.0/)
+​	建议安装    `  node7.0.0` 以下版本[https://nodejs.org/en/blog/release/v6.2.0/](https://nodejs.org/en/blog/release/v6.2.0/)
 
-### 2. 项目结构概览及说明
+### 项目结构概览及说明
 
 ```tree
 .
@@ -74,7 +74,7 @@
 |  |   ├─animate.less                   // 全局动画样式
 |  ├─images                          	// 图片文件夹
 ```
-### 3. 项目运行
+### 项目运行
 
 ##### 安装依赖包
 
@@ -92,25 +92,9 @@
 
 `npm run dist`
 
-### 4. 项目部署
+查看[demo](https://xiang0308.github.io/react-webpack/dist/#/m/effect)
 
-（1）登录到服务器，ftp的连接方式如下：
-
-​	IP：************（拨号VPN后才能连上）
-
-​	端口号：xxx
-
-​	用户名：ftp
-
-​	密码：**************
-
-（2）登录成功后，在服务器上创建活动项目目录名称或版本号
-
-（3）将本地打包生成好的 rd （联调、测试环境文件包） 和 dist （线上环境文件包）上传到第2步骤创建活动项目目录下
-
-（4）浏览，`如: https://xiang0308.github.io/react-webpack/dist/#/m/effect`
-
-### 5. 其他
+### 封装的相关组件
 
 | 公共组件            | 描述               |
 | --------------- | ---------------- |
