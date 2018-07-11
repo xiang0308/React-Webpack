@@ -2,19 +2,19 @@
  * @Author: wangxiang
  * @Date:   2017-04-25 16:02:37
  * @Last Modified by:   wangxiang
- * @Last Modified time: 2017-04-25 17:32:22
+ * @Last Modified time: 2017-05-04 12:06:56
  */
 
 'use strict';
 
 import $ from 'jquery';
-import wx from 'weixin-js-sdk';
+import wx from 'services/wx';
 
 /**
  * [JSSDK音频接口]
  * @return {[type]} [description]
  */
-export const handleVoice = () => {
+export const wxVoice = () => {
     return {
         startRecord: startRecord,               // 开始录音
         stopRecord: stopRecord,                 // 停止录音

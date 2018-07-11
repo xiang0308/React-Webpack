@@ -2,20 +2,20 @@
  * @Author: wangxiang
  * @Date:   2017-04-25 16:02:37
  * @Last Modified by:   wangxiang
- * @Last Modified time: 2017-04-25 17:58:23
+ * @Last Modified time: 2017-05-04 12:04:47
  */
 
 'use strict';
 
 import $ from 'jquery';
-import wx from 'weixin-js-sdk';
+import wx from 'services/wx';
 
 /**
  * [JSSDK图像接口]
  * @param  {[type]} obj [description]
  * @return {[type]}     [description]
  */
-export const handleImage = (obj) => {
+export const wxImage = (obj) => {
     let needUrlType = obj.needUrlType.trim() || 'localIds';
 
     return chooseImage(obj)

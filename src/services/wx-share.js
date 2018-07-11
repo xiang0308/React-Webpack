@@ -1,14 +1,21 @@
 /*
  * @Author: wangxiang
- * @Date:   2017-08-28 17:42:37
+ * @Date:   2017-04-25 11:29:39
  * @Last Modified by:   wangxiang
- * @Last Modified time: 2017-08-28 17:43:07
+ * @Last Modified time: 2017-07-05 14:30:52
  */
 
+'use strict';
 import wx from 'services/wx';
 
 /**
  * [JSSDK分享接口]
+ * 说明：
+ * 1.pyq : 表示分享到朋友圈
+ * 2.py  : 表示分享给朋友
+ * 3.qq  : 表示分享给QQ好友
+ * 4.qqkj: 表示分享到QQ空间
+ * 5.wb  : 表示分享到微博
  * @param  {[type]}   obj      [description]
  * @param  {Function} callback [description]
  * @return {[type]}            [description]

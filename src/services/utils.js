@@ -1,35 +1,44 @@
 /*
 * @Author: wangxiang
-* @Date:   2017-04-25 10:21:14
+* @Date:   2017-08-31 10:34:23
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-08-25 11:52:29
+* @Last Modified time: 2017-09-09 11:58:21
 */
 
 import config from 'config';
 import $ from 'jquery';
+import * as services from 'services';
 
-export function getRootUrl() {
-    let env = getParameterByName('env');
+export function getRootUrl(host) {
+    let env = config.appEnv;
 
-    return (env ? config[env + 'Url'] : config.rootUrl);
+    return (env ? config[env + 'Url' + (host || '')] : config.rootUrl);
 }
 
-export function getShareUrl() {
-    let env = getParameterByName('env') || 'dist';
-    let urlStr = 'share' + env.replace(/\w/, function($0) {
+export function getShareUrl(type) {
+    let env = config.appEnv;
+    let urlStr = (type || 'share') + env.replace(/\w/, function($0) {
         return $0.toUpperCase();
     }) + 'Url';
 
     return (env ? config[urlStr] : config.shareUrl);
 }
 
+export function getPlatFormUrl(name, url) {
+    let platform = services.platform(url);
+    let obj = platform[name];
+    let rtv = `${obj.MallCooUrl}?AppID=${obj.AppID}&PublicKey=${obj.PublicKey}&CallbackUrl=${obj.CallbackUrl}`;
+
+    return rtv;
+}
+
 export function ConverJson(jsonString) {
-    var rtv;
+    let rtv;
     try {
         rtv = JSON.parse(jsonString);
     } catch (ex) {
         try {
-            rtv = (new Function('return' + jsonString ))();
+            rtv = (new Function('return' + jsonString))();
         } catch (ex) {
             rtv = eval('(' + jsonString + ')');
         }
@@ -38,15 +47,6 @@ export function ConverJson(jsonString) {
     return rtv;
 }
 
-/**
- * @param  {[type]} mouseX [description]
- * @param  {[type]} mouseY [description]
- * @param  {[type]} rectX  [description]
- * @param  {[type]} rectY  [description]
- * @param  {[type]} width  [矩形宽度]
- * @param  {[type]} height [矩形高度]
- * @return {[bool]}        [description]
- */
 export function isMouseInRect(mouseX, mouseY, rectX, rectY, width, height) {
     let maxX = rectX + width;
     let maxY = rectY + height;
@@ -70,9 +70,9 @@ export function rem(size = 750) {
         reCalc = () => {
             var clientWidth = docEl.clientWidth;
             if (!clientWidth) return;
-            if(clientWidth >= size){
+            if (clientWidth >= size) {
                 docEl.style.fontSize = '100px';
-            }else{
+            } else {
                 docEl.style.fontSize = 100 * (clientWidth / size) + 'px';
             }
         };
@@ -83,28 +83,25 @@ export function rem(size = 750) {
     document.addEventListener('DOMContentLoaded', reCalc, false);
 }
 
-let cacheMapImg = {
-
-};
+let cacheMapImg = {};
 export function preLoadImg(imgs, callback) {
     let len = imgs.length;
     let i = 0;
     let loadOk = function(i, len, isError) {
         callback(parseInt(i / len * 100), isError);
     }
-
     imgs.forEach(item => {
         if (cacheMapImg[item]) {
-            i ++;
+            i++;
             loadOk(i, len);
         } else {
             let image = new Image();
             image.onload = function() {
-                i ++ ;
+                i++;
                 loadOk(i, len);
             };
             image.onerror = function() {
-                i ++ ;
+                i++;
                 loadOk(i, len, true);
             };
             image.src = item;
@@ -112,20 +109,9 @@ export function preLoadImg(imgs, callback) {
     })
 }
 
-export function validTelephoneNum(value) {
-    const reg = /^1(3|4|5|7|8)\d{9}$/;
-    if (getType(value) === 'string' && !isNaN(parseInt(value))) {
-        return reg.test(value);
-    } else if (getType(value) === 'number') {
-        return reg.test(value);
-    } else {
-        return false;
-    }
-}
-
 export function scrollBottom(dom, ulDom, callback) {
-    $(dom).on('scroll.bottom', ()=>{
-        window.requestAnimationFrame(()=>{
+    $(dom).on('scroll.bottom', () => {
+        window.requestAnimationFrame(() => {
             var sh = $(dom).height(),
                 st = $(dom).scrollTop(),
                 mt = $(ulDom).height();
@@ -146,46 +132,45 @@ var BaseClass = (function() {
         }
     }
     var _extend = function() {
-        //开关 用来使生成原型时,不调用真正的构成流程init
-        this.initPrototype = true
-        var prototype = new this()
-        this.initPrototype = false
+            //开关 用来使生成原型时,不调用真正的构成流程init
+            this.initPrototype = true
+            var prototype = new this()
+            this.initPrototype = false
 
-        var items = Array.prototype.slice.call(arguments) || []
-        var item
+            var items = Array.prototype.slice.call(arguments) || []
+            var item
 
-        //支持混入多个属性，并且支持{}也支持 Function
-        while (item = items.shift()) {
-            _mix(prototype, item.prototype || item)
+            //支持混入多个属性，并且支持{}也支持 Function
+            while (item = items.shift()) {
+                _mix(prototype, item.prototype || item)
+            }
+
+            // 这边是返回的类，其实就是我们返回的子类
+            function SubClass() {
+                if (!SubClass.initPrototype && this.init)
+                    this.init.apply(this, arguments) //调用init真正的构造函数
+            }
+
+            // 赋值原型链，完成继承
+            SubClass.prototype = prototype
+                // 改变constructor引用
+            SubClass.prototype.constructor = SubClass
+                // 为子类也添加extend方法
+            SubClass.extend = _extend
+
+            return SubClass
         }
-
-        // 这边是返回的类，其实就是我们返回的子类
-        function SubClass() {
-            if (!SubClass.initPrototype && this.init)
-                this.init.apply(this, arguments)//调用init真正的构造函数
-        }
-
-        // 赋值原型链，完成继承
-        SubClass.prototype = prototype
-        // 改变constructor引用
-        SubClass.prototype.constructor = SubClass
-        // 为子类也添加extend方法
-        SubClass.extend = _extend
-
-        return SubClass
-    }
-    //超级父类
+        //超级父类
     var Class = function() {}
-    //为超级父类添加extend方法
+        //为超级父类添加extend方法
     Class.extend = _extend
     return Class
 })();
-
 var Drag = BaseClass.extend({
-    init:function(options){
+    init: function(options) {
         var self = this;
 
-        self.supportTouch = (window.Modernizr && Modernizr.touch === true) || (function () {
+        self.supportTouch = (window.Modernizr && Modernizr.touch === true) || (function() {
             return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
         })();
         self.canMove = false;
@@ -211,7 +196,7 @@ var Drag = BaseClass.extend({
             self.bind(document, 'mouseup', self.endHandler);
         }
     },
-    bind: function (el, eventName, fn) {
+    bind: function(el, eventName, fn) {
         var self = this;
 
         if (el && eventName && fn) {
@@ -279,12 +264,14 @@ var Drag = BaseClass.extend({
         var transform = window.getComputedStyle(el, null).getPropertyValue('-webkit-transform');
         var results = transform.match(/matrix(?:(3d)\(-{0,1}\d+(?:, -{0,1}\d+)*(?:, (-{0,1}\d+))(?:, (-{0,1}\d+))(?:, (-{0,1}\d+)), -{0,1}\d+\)|\(-{0,1}\d+(?:, -{0,1}\d+)*(?:, (-{0,1}\d+))(?:, (-{0,1}\d+.?\d+))\))/);
 
-        if(!results) return [0, 0, 0];
-        if(results[1] == '3d') return results.slice(2,5);
+        if (!results) return [0, 0, 0];
+        if (results[1] == '3d') return results.slice(2, 5);
 
         results.push(0);
         return results.slice(5, 8); // returns the [X,Y,Z,1] values
     }
 });
-
-export {BaseClass, Drag};
+export {
+    BaseClass,
+    Drag
+};

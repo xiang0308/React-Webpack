@@ -2,8 +2,9 @@
  * @Author: wangxiang
  * @Date:   2017-04-25 18:01:36
  * @Last Modified by:   wangxiang
- * @Last Modified time: 2017-08-25 10:48:19
+ * @Last Modified time: 2017-09-09 14:04:43
  */
+'use strict';
 
 import $ from 'jquery';
 import wx from 'services/wx';
@@ -65,6 +66,7 @@ export const wxConfig = (config) => {
                 deferred.resolve(res);
             }
         });
+
     });
 
     wx.error(function (res) {
