@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-04-26 10:05:51
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2018-07-11 13:47:26
+* @Last Modified time: 2018-07-21 17:31:38
 */
 import React from 'react';
 import { bindActionCreators } from 'redux';
@@ -67,8 +67,12 @@ class MobileComponent extends React.Component {
                     });
                 });
         } else {
-            window.audioElement.load();
-            window.audioElement.play();
+            if (window.audioElement
+                && window.audioElement.load
+                && window.audioElement.play) {
+                window.audioElement.load();
+                window.audioElement.play();
+            }
             this.setState({
                 isLoading: false
             });
@@ -134,11 +138,11 @@ class MobileComponent extends React.Component {
                     >
                     </Confirm>
                 </Modal>
-                <Music
+                {/*<Music
                     actions={ actions }
                     play={ music.play }
                 >
-                </Music>
+                </Music>*/}
                 <Preloader preloader={ preloader }></Preloader>
             </Mobile>
         );

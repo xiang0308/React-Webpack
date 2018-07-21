@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2017-05-16 11:05:49
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2017-09-29 16:39:47
+* @Last Modified time: 2018-07-21 19:23:27
 */
 import React from 'react';
 import { bindActionCreators } from 'redux';
@@ -12,6 +12,7 @@ import CssFadeEffect from 'public/CssFadeEffect';
 import CssZoomEffect from 'public/CssZoomEffect';
 import CssRotateEffect from 'public/CssRotateEffect';
 import CssShakeEffect from 'public/CssShakeEffect';
+import PcaCascade from 'public/PcaCascade';
 
 import './index.less';
 
@@ -172,6 +173,8 @@ class EffectComponent extends React.Component {
                     </CssShakeEffect>
                 </div>
                 <hr/>
+                <h3>省市区级联</h3>
+                <PcaCascade></PcaCascade>
             </div>
         );
     }
