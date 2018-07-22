@@ -2,7 +2,7 @@
 * @Author: wangxiang
 * @Date:   2018-07-21 17:34:14
 * @Last Modified by:   wangxiang
-* @Last Modified time: 2018-07-21 19:28:18
+* @Last Modified time: 2018-07-22 14:53:23
 */
 import React, { Component, PropTypes } from 'react';
 import { ProvinceData } from './provinceData';
@@ -18,15 +18,6 @@ class PcaCascadeComponent extends Component {
             city: '选择市',
             area: '选择区'
         }
-    }
-
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillUnmount() {
     }
 
     /**
