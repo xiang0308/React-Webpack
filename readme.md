@@ -25,7 +25,7 @@
 |  ├─rd.js                              // 打包到联调、测试环境配置文件
 |  ├─dist.js                            // 打包到线上环境配置文件
 ├─src                                   // 页面主文件
-|  ├─favicon.png                        // 收藏夹图标
+|  ├─favicon.ico                        // 收藏夹图标
 |  ├─index.js                           // 入口js文件，页面路由配置，公共样式，相关依赖库等注入
 |  ├─index.html                         // 入口html文件
 |  ├─config                             // 状态机actions
